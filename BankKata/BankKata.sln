@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankKata.App", "src\BankKata.App\BankKata.App.csproj", "{E7225074-B227-44D9-8671-3CE68EA7E91C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{76B5ACF2-08BF-43DF-921A-AF9DF667D015}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{477497D5-70C8-4F46-BB62-1C57A7430E04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankKata.Tests", "test\BankKata.Tests\BankKata.Tests.csproj", "{997A075F-31F0-41A1-83F3-D9A5852DBDE3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7225074-B227-44D9-8671-3CE68EA7E91C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7225074-B227-44D9-8671-3CE68EA7E91C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7225074-B227-44D9-8671-3CE68EA7E91C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7225074-B227-44D9-8671-3CE68EA7E91C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{997A075F-31F0-41A1-83F3-D9A5852DBDE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{997A075F-31F0-41A1-83F3-D9A5852DBDE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{997A075F-31F0-41A1-83F3-D9A5852DBDE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{997A075F-31F0-41A1-83F3-D9A5852DBDE3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E7225074-B227-44D9-8671-3CE68EA7E91C} = {76B5ACF2-08BF-43DF-921A-AF9DF667D015}
+		{997A075F-31F0-41A1-83F3-D9A5852DBDE3} = {477497D5-70C8-4F46-BB62-1C57A7430E04}
+	EndGlobalSection
+EndGlobal
