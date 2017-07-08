@@ -1,15 +1,22 @@
-﻿using System;
-
-namespace BankKata.App
+﻿namespace BankKata.App
 {
     public class Account
     {
-        public void Deposit(int p0)
+        private readonly TransactionRepository _transactionRepository;
+
+        public Account(TransactionRepository transactionRepository)
         {
+            _transactionRepository = transactionRepository;
         }
 
-        public void Withdraw(int i)
+        public void Deposit(int amount)
         {
+            _transactionRepository.AddDeposit(amount);
+        }
+
+        public void Withdraw(int amount)
+        {
+            _transactionRepository.AddWithdrawal(amount);
         }
 
         public void PrintStatement()

@@ -1,10 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
-using BankKata.App;
+﻿using BankKata.App;
 using Moq;
+using Moq.Sequences;
 using NUnit.Framework;
 
 namespace BankKata.Tests
@@ -12,15 +8,13 @@ namespace BankKata.Tests
     [TestFixture]
     public class PrintStatementFeature
     {
-        private Mock<Console> _console;
-
-        private Account _account;
-
         [SetUp]
         public void SetUp()
         {
             _console = new Mock<Console>();
-            _account = new Account();
+
+            TransactionRepository transactionRepository = new TransactionRepository();
+            _account = new Account(transactionRepository);
         }
 
         [TearDown]
@@ -28,6 +22,10 @@ namespace BankKata.Tests
         {
             _console.Reset();
         }
+
+        private Mock<Console> _console;
+
+        private Account _account;
 
         [Test]
         public void PrintStatement_Contains_AllTransactions()
@@ -41,8 +39,10 @@ namespace BankKata.Tests
             _account.PrintStatement();
 
             // Assert
-            _console.Verify(x => x.PrintLine("DATE | AMOUNT | BALANCE"));
-
+            using (Sequence.Create())
+            {
+                _console.Setup(_ => _.PrintLine("DATE | AMOUNT | BALANCE")).InSequence();
+            }
         }
     }
 }
