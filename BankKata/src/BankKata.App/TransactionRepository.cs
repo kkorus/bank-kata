@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace BankKata.App
 {
@@ -10,6 +11,11 @@ namespace BankKata.App
         }
 
         public virtual void AddWithdrawal(int amount)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual IList<Transaction> GetAllTransactions()
         {
             throw new NotImplementedException();
         }
