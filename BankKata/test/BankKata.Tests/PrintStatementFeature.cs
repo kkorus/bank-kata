@@ -13,8 +13,9 @@ namespace BankKata.Tests
         {
             _console = new Mock<Console>();
 
-            TransactionRepository transactionRepository = new TransactionRepository();
-            _account = new Account(transactionRepository);
+            var transactionRepository = new TransactionRepository();
+            var statementPrinder = new StatementPrinter();
+            _account = new Account(transactionRepository, statementPrinder);
         }
 
         [TearDown]

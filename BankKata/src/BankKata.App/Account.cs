@@ -3,10 +3,14 @@
     public class Account
     {
         private readonly TransactionRepository _transactionRepository;
+        private readonly StatementPrinter _printterStatemnt;
 
-        public Account(TransactionRepository transactionRepository)
+        public Account(
+            TransactionRepository transactionRepository,
+            StatementPrinter printterStatemnt)
         {
             _transactionRepository = transactionRepository;
+            _printterStatemnt = printterStatemnt;
         }
 
         public void Deposit(int amount)
@@ -21,6 +25,8 @@
 
         public void PrintStatement()
         {
+            var transactions = _transactionRepository.GetAllTransactions();
+            _printterStatemnt.Print(transactions);
         }
     }
 }

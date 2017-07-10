@@ -17,7 +17,7 @@ namespace BankKata.Tests
         {
             _statementPrinter = new Mock<StatementPrinter>();
             _transactionRepository = new Mock<TransactionRepository>();
-            _account = new Account(_transactionRepository.Object);
+            _account = new Account(_transactionRepository.Object, _statementPrinter.Object);
         }
 
         [Test]
@@ -49,7 +49,7 @@ namespace BankKata.Tests
         public void Print_A_Statement()
         {
             // Arrange
-            var transactions = new List<Transaction>();
+            var transactions = new List<Transaction> { new Transaction("12/05/2015", 100) };
             _transactionRepository.Setup(x => x.GetAllTransactions()).Returns(transactions);
 
             // Act
