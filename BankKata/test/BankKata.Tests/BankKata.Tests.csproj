@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountShould.cs" />
+    <Compile Include="ClockShould.cs" />
     <Compile Include="PrintStatementFeature.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TransactionRepositoryShould.cs" />

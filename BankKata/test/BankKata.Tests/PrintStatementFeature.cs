@@ -8,12 +8,17 @@ namespace BankKata.Tests
     [TestFixture]
     public class PrintStatementFeature
     {
+        private Mock<Console> _console;
+        private Account _account;
+        private Mock<Clock> _clock;
+
         [SetUp]
         public void SetUp()
         {
             _console = new Mock<Console>();
+            _clock = new Mock<Clock>();
 
-            var transactionRepository = new TransactionRepository();
+            var transactionRepository = new TransactionRepository(_clock.Object);
             var statementPrinder = new StatementPrinter();
             _account = new Account(transactionRepository, statementPrinder);
         }
@@ -23,10 +28,6 @@ namespace BankKata.Tests
         {
             _console.Reset();
         }
-
-        private Mock<Console> _console;
-
-        private Account _account;
 
         [Test]
         public void PrintStatement_Contains_AllTransactions()
