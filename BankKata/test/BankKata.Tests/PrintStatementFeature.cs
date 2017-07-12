@@ -19,7 +19,7 @@ namespace BankKata.Tests
             _clock = new Mock<Clock>();
 
             var transactionRepository = new TransactionRepository(_clock.Object);
-            var statementPrinder = new StatementPrinter();
+            var statementPrinder = new StatementPrinter(_console.Object);
             _account = new Account(transactionRepository, statementPrinder);
         }
 

@@ -4,8 +4,18 @@ namespace BankKata.App
 {
     public class StatementPrinter
     {
-        public virtual void Print(IList<Transaction> transactions)
+        private readonly Console _console;
+
+        private const string Header = "DATE | AMOUNT | BALANCE";
+
+        public StatementPrinter(Console console)
         {
+            _console = console;
+        }
+
+        public virtual void Print(IEnumerable<Transaction> transactions)
+        {
+            _console.PrintLine(Header);
         }
     }
 }
