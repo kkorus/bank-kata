@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using BankKata.App;
 using NUnit.Framework;
 
@@ -15,7 +15,6 @@ namespace BankKata.Tests
 
             // Act
             var date = clock.GetCurrentDateAsString();
-
 
             // Assert
             Assert.That(date, Is.EqualTo("24/04/2015"));
