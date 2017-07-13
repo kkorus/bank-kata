@@ -16,8 +16,17 @@ namespace BankKata.App
 
         public virtual void Print(IEnumerable<Transaction> transactions)
         {
-            _console.PrintLine(Header);
+            PrintHeader();
+            PrintStatementLines(transactions);
+        }
 
+        private void PrintHeader()
+        {
+            _console.PrintLine(Header);
+        }
+
+        private void PrintStatementLines(IEnumerable<Transaction> transactions)
+        {
             var lines = CreateFormattedStatementLines(transactions);
             lines.ForEach(x => _console.PrintLine(x));
         }

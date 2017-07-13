@@ -3,7 +3,6 @@ using System.Linq;
 using Moq;
 using NUnit.Framework;
 using BankKata.App;
-using Moq.Sequences;
 
 namespace BankKata.Tests
 {
