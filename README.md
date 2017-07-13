@@ -1,4 +1,4 @@
-# Implementation of Bank Kata
+# Implementation of Bank Kata [Outside In TDD](https://www.youtube.com/watch?v=XHnuMjah6ps)
 Create a simple bank application with the following features:
 
 - Deposit into Account
